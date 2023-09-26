@@ -17,7 +17,7 @@
           <button mat-button (click)="sidenav.toggle()">
             <i class="fas fa-bars fa-2x"></i>
           </button>
-          <h5 class="m-0">{{Config.APP_TITLE}}<br><span style="font-size: 0.7em;">v{{Config.APP_VERSION}}</span></h5>
+          <h5 class="m-0">My APP title<br><span style="font-size: 0.7em;">v1.2.123</span></h5>
         </div>
 
         <div class="col-auto pl-0 d-none d-md-flex flex-column align-items-center justify-content-center">
@@ -55,11 +55,13 @@
         <!--  notification center //-->
         <div class="col pl-0 d-flex align-items-center">
           <div class="top-item d-flex align-items-center justify-content-between" [class.no-pointer]="content.length === 0">
-          <div class="d-inline-block text-truncate">
-            <!-- <span class="title">{{content[content.length - 1]?.title}}</span><br/>
-            <span class="description">{{content[content.length - 1]?.description}}</span> -->
-            <span class="d-inline-block text-truncate">Prio 1 Andris 22 UPDATE 1-Kremlin says Ukraine sabotaged dam to distract from faltering offensive</span><br/>
-            <span class="d-inline-block text-truncate">Accidents Asia CIS Countries Central Conflicts Disasters East European Countries Eastern Europe Emerging Market Countries Energy (TRBC level 1) Europe Floods General News International Major News Military Conflicts National Security North Asia Pacific Peace Russia Ukraine Utilities (TRBC level 2) War</span>
+            <div class="d-flex flex-column">
+              <!-- <span class="title">{{content[content.length - 1]?.title}}</span><br/>
+              <span class="description">{{content[content.length - 1]?.description}}</span> -->
+              <div class="d-inline-block text-truncate">Prio 1 Andris 22 UPDATE 1-Kremlin says Ukraine sabotaged dam to distract from faltering offensive</div>
+              <div class="d-inline-block text-truncate">Accidents Asia CIS Countries Central Conflicts Disasters East European Countries Eastern Europe Emerging Market Countries Energy (TRBC level 1) Europe Floods General News International Major News Military Conflicts National Security North Asia Pacific Peace Russia Ukraine Utilities (TRBC level 2) War</div>
+            </div>
+          </div>
         </div>
 
         <div class="col-auto pl-0 d-none d-lg-flex align-items-center justify-content-end">
