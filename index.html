@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body class="p-3 m-0 border-0 bd-example m-0 border-0">
+
+    <div class="container-fluid">
+      <div class="row header flex-nowrap">
+
+        <div class="col-auto d-flex align-items-center pl-0">
+          <button mat-button (click)="sidenav.toggle()">
+            <i class="fas fa-bars fa-2x"></i>
+          </button>
+          <h5 class="m-0">{{Config.APP_TITLE}}<br><span style="font-size: 0.7em;">v{{Config.APP_VERSION}}</span></h5>
+        </div>
+
+        <div class="col-auto pl-0 d-none d-md-flex flex-column align-items-center justify-content-center">
+          <div>
+            <i class="fas fa-globe-europe mr-1"></i>
+            <span>host name : port</span>
+          </div>
+          <div>
+            <span class="mr-1">
+              <i class="fas fa-calendar mr-1"></i>
+              <span>2023.09.26</span>
+            </span>
+            <span>
+              <i class="fas fa-clock ml-0 mr-1"></i>
+              <span>15:35</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="col-auto pl-0 d-flex flex-column align-items-center justify-content-center">
+          <div>
+            <span>
+              <i class="fas fa-hourglass-end mr-1"></i>
+              <span>10:00</span>
+            </span>
+          </div>
+          <div>
+            <span class="server-status px-1 mr-1" [ngClass]="{ 'status-active': sessionMgr.isConnected === true, 'status-inactive': sessionMgr.isConnected !== true }"
+            [title]="Config.AUTH_SERVICE_BASE_URL">SV</span>
+            <span class="ws-status px-1" [ngClass]="{ 'status-active': ws.isConnected === 1, 'status-inactive': ws.isConnected !== 1 }"
+            [title]="Config.WS_SERVICE_URL">WS</span>
+          </div>
+        </div>
+
+        <!--  notification center //-->
+        <div class="col pl-0 d-flex align-items-center">
+          <div class="top-item d-flex align-items-center justify-content-between" [class.no-pointer]="content.length === 0">
+          <div class="d-inline-block text-truncate">
+            <!-- <span class="title">{{content[content.length - 1]?.title}}</span><br/>
+            <span class="description">{{content[content.length - 1]?.description}}</span> -->
+            <span class="d-inline-block text-truncate">Prio 1 Andris 22 UPDATE 1-Kremlin says Ukraine sabotaged dam to distract from faltering offensive</span><br/>
+            <span class="d-inline-block text-truncate">Accidents Asia CIS Countries Central Conflicts Disasters East European Countries Eastern Europe Emerging Market Countries Energy (TRBC level 1) Europe Floods General News International Major News Military Conflicts National Security North Asia Pacific Peace Russia Ukraine Utilities (TRBC level 2) War</span>
+        </div>
+
+        <div class="col-auto pl-0 d-none d-lg-flex align-items-center justify-content-end">
+          <img class="logo" src="assets/ncpower4_splash.jpg" (click)="onClickAbout()">
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
